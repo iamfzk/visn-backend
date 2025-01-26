@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 public class ManagersClientInvestsPermissionRequest {
     private Boolean isViewInvest;
     private Boolean isExportInvestCRM;
+    private Long departmentId;
     private Boolean isFullAccess;
 }

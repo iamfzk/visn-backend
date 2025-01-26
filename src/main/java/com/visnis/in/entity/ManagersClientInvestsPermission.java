@@ -20,6 +20,7 @@ public class ManagersClientInvestsPermission {
 	private Boolean isViewInvest;
 	private Boolean isExportInvestCRM;
 	private Boolean isFullAccess;
+	private Long departmentId;
 	private LocalDateTime createdDate;
 	private LocalDateTime updatedDate;
 }

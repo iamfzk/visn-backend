@@ -17,8 +17,10 @@ public class ManagersLpaPermission {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String departmentName;
-	private String departmentTitle;
+	private Boolean isViewLPA;
+	private Boolean isEditLPA;
+	private Boolean isFullAccess;
+	private Long departmentId;
 	private LocalDateTime createdDate;
 	private LocalDateTime updatedDate;
 }

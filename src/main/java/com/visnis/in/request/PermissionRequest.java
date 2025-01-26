@@ -22,10 +22,7 @@ public class PermissionRequest {
 	private OtherPermissionRequest other;
 	private SalesInterfacePermissionRequest  salesInterface;
 	private ManagersPermissionRequest managers;
-	
-	
-	
-	
 	private ManagersClientBonusesPermissionRequest aanagersClientBonuses;
-	private ManagersLpaPermissionRequest managersLpa;
+	private ManagersClientInvestsPermissionRequest managersClientInvests;
+	private ManagersLpaPermissionRequest  managersLpa;
 }

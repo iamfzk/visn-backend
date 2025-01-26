@@ -1,6 +1,7 @@
 package com.visnis.in.service.impl;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,6 +36,16 @@ public class DepartmentServiceImpl implements IDepartmentService {
 			response.setStatusCode("0");
 			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+	}
+
+	@Override
+	public ResponseEntity<Response> getAllDepartments() {
+		Response response=new Response<>();
+		List<DepartmentsEntity> all = departmentsRepository.findAll();
+		response.setMessage("Success");
+		response.setStatusCode("1");
+		response.setData(all);
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
 }

@@ -8,6 +8,8 @@ import com.visnis.in.entity.DepositPermission;
 import com.visnis.in.entity.InvestPermission;
 import com.visnis.in.entity.LocalPaymentAgentLPA;
 import com.visnis.in.entity.ManagersClientBonusesPermission;
+import com.visnis.in.entity.ManagersClientInvestsPermission;
+import com.visnis.in.entity.ManagersLpaPermission;
 import com.visnis.in.entity.ManagersPermission;
 import com.visnis.in.entity.OtherPermission;
 import com.visnis.in.entity.ParentSystemPermission;
@@ -23,6 +25,8 @@ import com.visnis.in.request.DepositPermissionRequest;
 import com.visnis.in.request.InvestPermissionRequest;
 import com.visnis.in.request.LocalPaymentAgentLPARequest;
 import com.visnis.in.request.ManagersClientBonusesPermissionRequest;
+import com.visnis.in.request.ManagersClientInvestsPermissionRequest;
+import com.visnis.in.request.ManagersLpaPermissionRequest;
 import com.visnis.in.request.ManagersPermissionRequest;
 import com.visnis.in.request.OtherPermissionRequest;
 import com.visnis.in.request.ParentSystemPermissionRequest;
@@ -280,4 +284,38 @@ public class Mapper {
 
 		return permission;
 	}
+	public static ManagersClientInvestsPermission managersClientInvestsPermissionRequestToEntity(ManagersClientInvestsPermissionRequest request) {
+        if (request == null) {
+            return null;
+        }
+        
+        ManagersClientInvestsPermission permission = new ManagersClientInvestsPermission();
+        
+        // Mapping fields from request to entity
+        permission.setIsViewInvest(request.getIsViewInvest());
+        permission.setIsExportInvestCRM(request.getIsExportInvestCRM());
+        permission.setIsFullAccess(request.getIsFullAccess());
+        permission.setDepartmentId(request.getDepartmentId());
+        permission.setCreatedDate(LocalDateTime.now()); 
+        permission.setUpdatedDate(LocalDateTime.now());
+        
+        return permission;
+    }
+	public static ManagersLpaPermission managersLpaPermissionRequestToEntity(ManagersLpaPermissionRequest request) {
+        if (request == null) {
+            return null;
+        }
+        
+        ManagersLpaPermission permission = new ManagersLpaPermission();
+        
+        // Mapping fields from request to entity
+        permission.setIsViewLPA(request.getIsViewLPA());
+        permission.setIsEditLPA(request.getIsEditLPA());
+        permission.setIsFullAccess(request.getIsFullAccess());
+        permission.setDepartmentId(request.getDepartmentId());
+        permission.setCreatedDate(java.time.LocalDateTime.now()); // Assuming createdDate is set at entity creation
+        permission.setUpdatedDate(java.time.LocalDateTime.now()); // Assuming updatedDate is set at entity creation
+        
+        return permission;
+    }
 }

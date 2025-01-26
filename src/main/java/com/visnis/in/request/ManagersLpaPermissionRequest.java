@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ManagersLpaPermissionRequest {
-    private String departmentName;
-    private String departmentTitle;
-}
+	private Boolean isViewLPA;
+	private Boolean isEditLPA;
+	private Boolean isFullAccess;
+	private Long departmentId;
 
+}

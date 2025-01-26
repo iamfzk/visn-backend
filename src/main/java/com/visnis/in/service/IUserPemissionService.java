@@ -9,4 +9,6 @@ public interface IUserPemissionService {
 
 	ResponseEntity<Response> addPemissions(PermissionRequest request);
 
+	ResponseEntity<Response> getPemissionsByDepartmentId(Long departmentId);
+
 }

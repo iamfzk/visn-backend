@@ -9,4 +9,6 @@ public interface IDepartmentService {
 
 	ResponseEntity<Response> addDepartment(AddDepartmentRequest request);
 
+	ResponseEntity<Response> getAllDepartments();
+
 }

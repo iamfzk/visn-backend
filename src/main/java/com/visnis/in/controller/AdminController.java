@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,9 +46,17 @@ public class AdminController {
 	public ResponseEntity<Response> addDepartment(@RequestBody @Validated AddDepartmentRequest request) {
 		return departmentService.addDepartment(request);
 	}
+	@GetMapping("/get-all-departments")
+	public ResponseEntity<Response> getAllDepartments() {
+		return departmentService.getAllDepartments();
+	}
 
 	@PostMapping("/add-pemissions")
 	public ResponseEntity<Response> addPemissions(@RequestBody PermissionRequest request) {
 		return pemissionService.addPemissions(request);
+	}
+	@GetMapping("/get-pemissions-by-department-id/{departmentId}")
+	public ResponseEntity<Response> getPemissionsByDepartmentId(@PathVariable Long departmentId) {
+		return pemissionService.getPemissionsByDepartmentId(departmentId);
 	}
 }
