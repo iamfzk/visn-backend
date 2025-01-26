@@ -1,4 +1,4 @@
-package com.visnis.in;
+package com.visnis.in.mapper;
 
 import java.time.LocalDateTime;
 

@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.visnis.in.Mapper;
 import com.visnis.in.dao.BonusesSystemPermissionRepository;
 import com.visnis.in.dao.CommentTemplatesPermissionRepository;
 import com.visnis.in.dao.DepositPermissionRepository;
@@ -43,6 +42,7 @@ import com.visnis.in.entity.TransferPermission;
 import com.visnis.in.entity.UserPermissions;
 import com.visnis.in.entity.WithdrawalPermissions;
 import com.visnis.in.entity.WthdrawalApprovalPermission;
+import com.visnis.in.mapper.Mapper;
 import com.visnis.in.request.PermissionRequest;
 import com.visnis.in.response.Response;
 import com.visnis.in.service.IUserPemissionService;
